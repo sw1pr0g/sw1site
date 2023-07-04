@@ -1,2 +1,2 @@
-# SW1pr0g-website
+# sw1pr0g-website
 Personal WebSite
