@@ -38,3 +38,7 @@ pkg
 # Config files
 .env
 >>>>>>> dev
+
+# local Vugu files
+0_components_vgen.go
+main_wasm.go
