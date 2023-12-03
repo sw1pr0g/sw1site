@@ -32,8 +32,8 @@ bin
 pkg
 
 # IDE User Settings
-.idea
-.vscode
+.idea/
+.vscode/
 
 # Config files
 .env
