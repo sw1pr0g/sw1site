@@ -1,20 +1,17 @@
-//go:build ignore
-// +build ignore
-
-package main
+package app
 
 import (
+	"github.com/sw1pr0g/sw1pr0g-website/config"
+	"github.com/vugu/vugu/devutil"
 	"log"
 	"net/http"
-
-	"github.com/vugu/vugu/devutil"
 )
 
-func main() {
-	l := "127.0.0.1:8844"
+func Run(cfg *config.Config) {
+	l := "localhost:" + cfg.HTTP.Port
 	log.Printf("Starting HTTP Server at %q", l)
 
-	wc := devutil.NewWasmCompiler().SetDir(".")
+	wc := devutil.NewWasmCompiler().SetDir("")
 	mux := devutil.NewMux()
 	mux.Match(devutil.NoFileExt, devutil.DefaultAutoReloadIndex.Replace(
 		`<!-- styles -->`,
