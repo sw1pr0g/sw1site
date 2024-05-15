@@ -1,24 +1,30 @@
 package app
 
 import (
-	"github.com/sw1pr0g/sw1pr0g-website/config"
-	"github.com/vugu/vugu/devutil"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
+	"github.com/sw1pr0g/sw1site/config"
+	"github.com/sw1pr0g/sw1site/internal/components"
 	"log"
 	"net/http"
 )
 
 func Run(cfg *config.Config) {
-	l := "localhost:" + cfg.HTTP.Port
-	log.Printf("Starting HTTP Server at %q", l)
+	app.Route("/", &components.Home{})
+	app.Route("/profile", &components.Profile{})
 
-	wc := devutil.NewWasmCompiler().SetDir("")
-	mux := devutil.NewMux()
-	mux.Match(devutil.NoFileExt, devutil.DefaultAutoReloadIndex.Replace(
-		`<!-- styles -->`,
-		`<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">`))
-	mux.Exact("/main.wasm", devutil.NewMainWasmHandler(wc))
-	mux.Exact("/wasm_exec.js", devutil.NewWasmExecJSHandler(wc))
-	mux.Default(devutil.NewFileServer().SetDir("."))
+	app.RunWhenOnBrowser()
 
-	log.Fatal(http.ListenAndServe(l, mux))
+	http.Handle("/", &app.Handler{
+		Name:        "sw1pr0g",
+		Description: "sw1pr0g website",
+		Icon: app.Icon{
+			Default: "static/icon.png", // Specify default favicon.
+		},
+		LoadingLabel: "Lofi music player to work, study and relax.",
+		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
+	})
+
+	if err := http.ListenAndServe(cfg.Port, nil); err != nil {
+		log.Fatal(err)
+	}
 }
