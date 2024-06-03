@@ -10,7 +10,6 @@ import (
 
 func Run(cfg *config.Config) {
 	app.Route("/", &components.Home{})
-	app.Route("/profile", &components.Profile{})
 
 	app.RunWhenOnBrowser()
 
@@ -20,8 +19,6 @@ func Run(cfg *config.Config) {
 		Icon: app.Icon{
 			Default: "static/icon.png", // Specify default favicon.
 		},
-		LoadingLabel: "Lofi music player to work, study and relax.",
-		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
 	})
 
 	if err := http.ListenAndServe(cfg.Port, nil); err != nil {

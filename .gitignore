@@ -1,44 +1,23 @@
-**_vgen.go
+# IDE
+.idea
+.vscode
+
+# Env
+.env
 
 # Binaries for programs and plugins
 *.exe
+*.exe~
 *.dll
 *.so
 *.dylib
+bin/
 
-# Compiled object files
-*.o
-*.obj
-*.a
-*.lib
-
-# Temporary files
-*.tmp
-*.log
-*.pid
-*.lock
-
-# Build results
-*.out
+# Test binary, built with `go test -c`
 *.test
-*.coverage
 
-# Docker files
-Dockerfile
-.dockerignore
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
 
-# Directories
-bin
-pkg
-
-# IDE User Settings
-.idea/
-.vscode/
-
-# Config files
-.env
->>>>>>> dev
-
-# local Vugu files
-0_components_vgen.go
-main_wasm.go
+# Dependency directories (remove the comment below to include it)
+vendor/
