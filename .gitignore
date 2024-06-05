@@ -9,6 +9,9 @@
 tmp/
 cmd/app/main
 
+# wasm files
+*.wasm
+
 # binaries for programs and plugins
 *.exe
 *.exe~
