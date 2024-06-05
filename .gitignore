@@ -1,23 +1,26 @@
 # IDE
-.idea
-.vscode
+.idea/
+.vscode/
 
-# Env
+# env
 .env
 
-# Binaries for programs and plugins
+# air live reload tmp
+tmp/
+
+# binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
-*.so
+*.sog
 *.dylib
 bin/
 
-# Test binary, built with `go test -c`
+# test binary, built with `go test -c`
 *.test
 
-# Output of the go coverage tool, specifically when used with LiteIDE
+# output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Dependency directories (remove the comment below to include it)
+# dependency directories (remove the comment below to include it)
 vendor/
