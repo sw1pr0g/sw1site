@@ -1,7 +1,7 @@
-# sw1pr0g-website
-Own website built on [go-app](https://go-app.dev/)
+# sw1site
+own website built on [go-app](https://go-app.dev/)
 
-You can get started with:
+you can get started with:
 
 ```sh
 go mod download
