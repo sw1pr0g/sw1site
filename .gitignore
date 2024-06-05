@@ -7,6 +7,7 @@
 
 # air live reload tmp
 tmp/
+cmd/app/main
 
 # binaries for programs and plugins
 *.exe
@@ -24,3 +25,6 @@ bin/
 
 # dependency directories (remove the comment below to include it)
 vendor/
+
+# macOS junk
+.DS_Store
