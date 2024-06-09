@@ -3,7 +3,7 @@ app:
   version: '0.0.1'
 
 http:
-  port: ':8000'
+  port: '8080'
 
 launch:
   mode: 'dev' # prod || dev

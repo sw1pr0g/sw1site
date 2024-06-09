@@ -4,7 +4,7 @@ tmp_dir = "tmp"
 
 [build]
   args_bin = []
-  cmd = "GOOS=js GOARCH=wasm go build -o static/web/app.wasm ./cmd/app"
+  cmd = "GOOS=js GOARCH=wasm go build -o static/web/app.wasm cmd/app/main.go && go build -o cmd/app/main cmd/app/main.go"
   bin = "cmd/app/main"
   delay = 1000
   exclude_dir = ["assets", "tmp", "vendor", "testdata"]
