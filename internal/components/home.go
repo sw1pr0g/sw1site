@@ -12,9 +12,10 @@ func (h *Home) Render() app.UI {
 	return app.Div().Body(
 		app.H1().
 			Class("title").
-			Text("Build a GUI with Go"),
+			Text("Alex Poryadin"),
 		app.P().
 			Class("text").
-			Text("Just because Go and this package are really awesome!"),
+			Text("Software Engineer"),
+		app.Br(),
 	)
 }

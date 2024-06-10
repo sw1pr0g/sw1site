@@ -7,7 +7,7 @@
 
 # air live reload tmp
 tmp/
-cmd/app/main
+static/sw1site
 
 # wasm files
 *.wasm

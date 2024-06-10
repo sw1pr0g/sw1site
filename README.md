@@ -7,7 +7,7 @@ you can get started with:
 go mod download
 air
 ```
-[air](https://github.com/air-verse/air) is used for hot reload in development, if you need only run app use this:
+[air](https://github.com/air-verse/air) is used for development, if you need only run app use this:
 ```shell
 go run cmd/app/main.go
 ```
