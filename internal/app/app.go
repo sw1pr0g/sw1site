@@ -10,8 +10,7 @@ import (
 )
 
 func Run(cfg *config.Config) {
-	app.Route("/", &components.Home{})
-	app.RunWhenOnBrowser()
+	app.Route("/", &App{})
 
 	if err := mime.AddExtensionType(".wasm", "application/wasm"); err != nil {
 		log.Fatal(err)
@@ -29,4 +28,23 @@ func Run(cfg *config.Config) {
 	if err := http.ListenAndServe(":"+cfg.HTTP.Port, nil); err != nil {
 		log.Fatal(err)
 	}
+}
+
+type App struct {
+	app.Compo
+}
+
+func (a *App) Render() app.UI {
+	return app.Div().Body(
+		&components.Header{},
+		app.Div().Body(
+			app.If(
+				app.Window().URL().Path == "/",
+				&components.Home{},
+			).ElseIf(
+				app.Window().URL().Path == "/profile",
+				&components.Profile{},
+			),
+		),
+	)
 }
