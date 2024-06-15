@@ -5,3 +5,4 @@ build:
 clean:
 	@go clean ./...
 	@-rm web/sw1site
+	@kill $(lsof -t -i:8080)

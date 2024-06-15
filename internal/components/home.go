@@ -14,6 +14,6 @@ func (h *Home) Render() app.UI {
 			Text("sw1prog's homepage"),
 		app.P().
 			Text("maybe you were waiting for the design, but I don't care about that :)"),
-		app.Br(),
+		app.Footer().Text("@ sw1pr0g"),
 	)
 }
