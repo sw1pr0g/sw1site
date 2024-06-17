@@ -10,12 +10,7 @@ type Home struct {
 
 func (h *Home) Render() app.UI {
 	return app.Div().Body(
-		app.H1().
-			Class("title").
-			Text("Alex Poryadin"),
 		app.P().
-			Class("text").
-			Text("Software Engineer"),
-		app.Br(),
+			Text("true sw1prog's homepage"),
 	)
 }

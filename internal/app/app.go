@@ -10,7 +10,9 @@ import (
 )
 
 func Run(cfg *config.Config) {
-	app.Route("/", &components.Home{})
+	app.Route("/", &components.Base{})
+	app.Route("/home", &components.Home{})
+	app.Route("/blog", &components.Blog{})
 	app.RunWhenOnBrowser()
 
 	if err := mime.AddExtensionType(".wasm", "application/wasm"); err != nil {
