@@ -5,7 +5,7 @@ go 1.22.2
 require github.com/ilyakaznacheev/cleanenv v1.5.0
 
 require (
-	github.com/BurntSushi/toml v1.2.1 // indirect
+	github.com/BurntSushi/toml v1.4.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/joho/godotenv v1.5.1 // indirect
 	github.com/maxence-charriere/go-app/v9 v9.8.0 // indirect
