@@ -11,9 +11,6 @@ type Home struct {
 func (h *Home) Render() app.UI {
 	return app.Div().Body(
 		app.P().
-			Text("sw1prog's homepage"),
-		app.P().
-			Text("maybe you were waiting for the design, but I don't care about that :)"),
-		app.Footer().Text("@ sw1pr0g"),
+			Text("true sw1prog's homepage"),
 	)
 }
