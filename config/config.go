@@ -1,6 +1,7 @@
 package config
 
 import (
+	"errors"
 	"github.com/ilyakaznacheev/cleanenv"
 )
 
@@ -29,6 +30,11 @@ func NewConfig() (*Config, error) {
 	cfg := &Config{}
 
 	err := cleanenv.ReadConfig("./config/config.yml", cfg)
+
+	if cfg.Launch.Mode != "prod" && cfg.Launch.Mode != "dev" {
+		return nil, errors.New("launch mode must be either 'prod' or 'dev'")
+	}
+
 	if err != nil {
 		return nil, err
 	}

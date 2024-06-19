@@ -4,6 +4,7 @@ import (
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 	"github.com/sw1pr0g/sw1site/config"
 	"github.com/sw1pr0g/sw1site/internal/components"
+	"github.com/sw1pr0g/sw1site/internal/utils"
 	"log"
 	"mime"
 	"net/http"
@@ -21,7 +22,11 @@ func Run(cfg *config.Config) {
 
 	staticDir := "/static/web"
 	fs := http.FileServer(http.Dir(staticDir))
-	http.Handle("/static/web/", http.StripPrefix("/static/web/", fs))
+
+	if cfg.Launch.Mode == "dev" {
+		fs = utils.CacheControl(fs)
+	}
+	http.Handle("/static/web/", fs)
 
 	http.Handle("/", &app.Handler{
 		Name: cfg.App.Name,

@@ -6,4 +6,4 @@
     port: '8080'
 
   launch:
-    mode: 'dev' # prod || dev
+    mode: 'dev'
